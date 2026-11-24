@@ -1,0 +1,64 @@
+/* Custom Styling & Micro-interactions for THRIFTERRA */
+
+@layer utilities {
+    .backdrop-blur-xs {
+        backdrop-filter: blur(4px);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f5f4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
+}
+
+/* Product Card Hover Zoom */
+.product-card img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover img {
+    transform: scale(1.06);
+}
+
+/* Modal Fade Animation */
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+#login-modal > div:last-child,
+#checkout-modal > div:last-child,
+#detail-modal > div:last-child {
+    animation: modalPop 0.22s ease-out forwards;
+}
+
+/* Sold Out Overlay Pattern */
+.sold-badge {
+    background: repeating-linear-gradient(
+        -45deg,
+        #1c1917,
+        #1c1917 10px,
+        #292524 10px,
+        #292524 20px
+    );
+}
